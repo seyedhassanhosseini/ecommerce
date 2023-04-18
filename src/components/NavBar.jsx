@@ -4,10 +4,6 @@ import {mobile} from "./../responsive"
 import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 
-
-
-
-
 const Container = styled.div`
   height: 60px;
   ${mobile({ height: "50px" })}
