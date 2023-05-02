@@ -14,13 +14,12 @@ const cors = require("cors");
 dotenv.config();
 
 const options = {
-  useNewUrlParser:true,
-  useUnifiedTopology:true
-}
-
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
 
 mongoose
-  .connect(process.env.MONGO_URL,options)
+  .connect(process.env.MONGO_URL, options)
   .then(() => console.log("DB Connection Successfull"))
   .catch((err) => {
     console.log(err);
@@ -28,9 +27,7 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-
-
-app.use("/api/auth",authRoute);
+app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
@@ -40,4 +37,3 @@ app.use("/api/checkout", stripeRoute);
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend server is running!");
 });
-
